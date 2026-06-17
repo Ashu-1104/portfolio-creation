@@ -6,7 +6,7 @@ export function CreativeExperience() {
       company: 'Softaculous Ltd.',
       role: 'PHP Developer (Webuzo)',
       location: 'Mumbai',
-      period: 'July 2025 – Present',
+      period: 'July 2024 – Present',
       highlights: [
         'Developing high-performance server-side logic for the Webuzo multi-user hosting panel',
         'Optimizing MySQL queries, reducing retrieval latency by 20% through advanced indexing strategies',
@@ -17,7 +17,7 @@ export function CreativeExperience() {
       company: 'Akobot.ai',
       role: 'Frontend Developer (Intern)',
       location: 'Remote/Mumbai',
-      period: 'Jan 2026 – Jun 2026',
+      period: 'Jan 2025 – Jun 2025',
       highlights: [
         'Architecting SEO-optimized structures using Next.js 15, improving speed by 35%',
         'Developed modular UI library with Tailwind CSS and TypeScript, increasing dev velocity by 30%',

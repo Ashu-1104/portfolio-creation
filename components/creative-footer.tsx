@@ -4,7 +4,7 @@ import { Code2, Mail } from 'lucide-react';
 
 export function CreativeFooter() {
   const socialLinks = [
-    { icon: Code2, href: 'https://github.com', label: 'GitHub' },
+    { icon: Code2, href: 'https://github.com/Ashu-1104', label: 'GitHub' },
     { icon: Mail, href: 'mailto:ashutoshtiwari110504@gmail.com', label: 'Email' },
   ];
 

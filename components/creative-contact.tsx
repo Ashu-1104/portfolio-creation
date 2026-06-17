@@ -1,25 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 export function CreativeContact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 2000);
-  };
-
   const contactInfo = [
     {
       icon: Mail,
@@ -29,9 +12,9 @@ export function CreativeContact() {
     },
     {
       icon: Phone,
-      label: 'Phone',
+      label: 'WhatsApp',
       value: '+91 9096452696',
-      link: 'tel:+919096452696',
+      link: 'https://wa.me/919096452696',
     },
     {
       icon: MapPin,
@@ -60,6 +43,8 @@ export function CreativeContact() {
               <a
                 key={index}
                 href={info.link}
+                target={info.link.startsWith('http') ? '_blank' : undefined}
+                rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="p-6 bg-card border border-border rounded-xl hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all group"
               >
                 <div className="flex items-start gap-4">
@@ -78,63 +63,30 @@ export function CreativeContact() {
           })}
         </div>
 
-        {/* Contact Form */}
-        <div className="bg-card border border-border rounded-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                rows={5}
-                className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors resize-none"
-                placeholder="Tell me about your project..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all flex items-center justify-center gap-2"
+        {/* CTA Section */}
+        <div className="text-center pt-8">
+          <h3 className="text-2xl font-bold mb-4">Ready to collaborate?</h3>
+          <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
+            Pick your preferred way to connect and let&apos;s discuss how I can help with your next project.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/919096452696"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all flex items-center justify-center gap-2"
             >
-              <Send size={20} />
-              {submitted ? 'Message Sent!' : 'Send Message'}
-            </button>
-          </form>
+              <MessageCircle size={20} />
+              Message on WhatsApp
+            </a>
+            <a
+              href="mailto:ashutoshtiwari110504@gmail.com"
+              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all flex items-center justify-center gap-2"
+            >
+              <Mail size={20} />
+              Send Email
+            </a>
+          </div>
         </div>
       </div>
     </section>

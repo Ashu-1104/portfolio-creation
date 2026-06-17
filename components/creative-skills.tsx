@@ -25,9 +25,9 @@ export function CreativeSkills() {
   ];
 
   const certifications = [
-    'React.js (Scalar)',
-    'Advanced Python (TuteDude)',
-    'Core Python (GeeksforGeeks)',
+    { name: 'React.js', issuer: 'Scalar', url: '#' },
+    { name: 'Advanced Python', issuer: 'TuteDude', url: '#' },
+    { name: 'Core Python', issuer: 'GeeksforGeeks', url: '#' },
   ];
 
   return (
@@ -62,14 +62,29 @@ export function CreativeSkills() {
           <h3 className="text-2xl font-bold mb-6">Certifications & Achievements</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert) => (
-              <div key={cert} className="flex items-center gap-3 p-4 bg-card border border-border rounded-lg">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground/80">{cert}</span>
-              </div>
+              <a
+                key={cert.name}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:border-primary transition-colors cursor-pointer group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform"></div>
+                  <div>
+                    <p className="text-foreground/80 font-medium">{cert.name}</p>
+                    <p className="text-xs text-foreground/50">{cert.issuer}</p>
+                  </div>
+                </div>
+                <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              </a>
             ))}
             <div className="flex items-center gap-3 p-4 bg-card border border-border rounded-lg">
               <div className="w-2 h-2 bg-secondary rounded-full"></div>
-              <span className="text-foreground/80">9.62 CGPA - Top Ranked</span>
+              <div>
+                <p className="text-foreground/80 font-medium">Academic Distinction</p>
+                <p className="text-xs text-foreground/50">9.62 CGPA - Top Ranked</p>
+              </div>
             </div>
           </div>
         </div>
