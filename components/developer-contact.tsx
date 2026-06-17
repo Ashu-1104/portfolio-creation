@@ -77,7 +77,7 @@ export function DeveloperContact() {
                 <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">{method.label}</span>
                 <ExternalLink size={10} className="text-zinc-700 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-              <h4 className="text-zinc-100 font-bold group-hover:text-emerald-500 transition-colors break-words">
+              <h4 className="text-zinc-100 font-bold group-hover:text-emerald-500 transition-colors truncate text-sm sm:text-base">
                 {method.value}
               </h4>
               <p className="text-zinc-500 text-xs leading-relaxed">
