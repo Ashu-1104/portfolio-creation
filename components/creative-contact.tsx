@@ -45,15 +45,18 @@ export function CreativeContact() {
                 href={info.link}
                 target={info.link.startsWith('http') ? '_blank' : undefined}
                 rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="p-6 bg-card border border-border rounded-xl hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all group"
+                className="p-6 bg-card border border-border rounded-xl hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all group block"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                {/* min-w-0 forces the flex container to respect boundaries instead of expanding to its contents */}
+                <div className="flex items-start gap-4 min-w-0">
+                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors shrink-0">
                     <Icon className="text-primary" size={24} />
                   </div>
-                  <div>
+                  {/* min-w-0 here allows child elements to truncate or wrap properly */}
+                  <div className="min-w-0 flex-1">
                     <p className="text-sm text-foreground/60 font-medium">{info.label}</p>
-                    <p className="text-foreground font-semibold group-hover:text-primary transition-colors">
+                    {/* break-all or break-words keeps long strings like emails from overflowing */}
+                    <p className="text-foreground font-semibold group-hover:text-primary transition-colors break-all md:break-words">
                       {info.value}
                     </p>
                   </div>
