@@ -51,7 +51,7 @@ export function DeveloperHero() {
               transition={{ delay: 0.3 }}
               className="text-zinc-400 text-lg max-w-xl leading-relaxed"
             >
-              I build robust, high-performance systems and scalable web applications. Currently focused on architecting secure interfaces and full-stack solutions. Previously <span className="text-emerald-500 font-medium italic">Frontend Engineering Intern</span> at Akobot.ai.
+              I specialize in engineering robust, high-performance systems and architecting scalable web applications. My approach focuses on building secure, efficient interfaces and developing end-to-end full-stack solutions with a commitment to technical excellence and reliability.
             </motion.p>
 
             <motion.div 

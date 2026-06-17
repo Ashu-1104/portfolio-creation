@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Cpu, Globe, Database, Terminal, Shield, Box } from 'lucide-react';
+import { Cpu, Globe, Database, Terminal, Shield, Box, Award, CheckCircle2 } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -35,7 +35,7 @@ export function DeveloperSkills() {
           <h3 className="text-4xl font-bold text-zinc-100">Technical Arsenal</h3>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           {skillCategories.map((cat, index) => (
             <motion.div 
               key={index}
@@ -62,24 +62,71 @@ export function DeveloperSkills() {
           ))}
         </div>
 
-        {/* Certs & Achievement: Minimal Terminal Block */}
-        <div className="mt-12 p-8 bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden relative">
-          <div className="flex items-center gap-2 mb-6 font-mono text-xs text-zinc-600">
-            <Shield size={14} />
-            <span>CERTIFICATIONS_AND_ACHIEVEMENTS</span>
+        {/* Certifications & Achievements Section */}
+        <div className="space-y-8">
+          <div className="flex items-center gap-4">
+            <h3 className="text-2xl font-bold text-zinc-100">Credentials & Recognitions</h3>
+            <div className="h-[1px] flex-grow bg-zinc-800"></div>
           </div>
-          <div className="grid sm:grid-cols-2 gap-8 font-mono text-xs">
-            <div className="space-y-2">
-              <p className="text-emerald-500 font-bold tracking-tight">🏆 Academic Excellence</p>
-              <p className="text-zinc-500 leading-relaxed">Graduated with 9.62 CGPA, top-ranked in the department at Mumbai University</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-emerald-500 font-bold tracking-tight">📜 Certifications</p>
-              <p className="text-zinc-500 leading-relaxed">React.js (Scalar), Advanced Python (TuteDude), Core Python (GFG)</p>
-            </div>
-          </div>
-          <div className="absolute right-0 bottom-0 p-4 opacity-5 pointer-events-none">
-            <Cpu size={120} />
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Academic Excellence */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="group p-8 bg-zinc-900/20 border border-zinc-800 rounded-2xl hover:border-emerald-500/30 transition-all relative overflow-hidden"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-500">
+                  <Award size={24} />
+                </div>
+                <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-[0.2em]">Achievement_01</span>
+              </div>
+              
+              <h4 className="text-lg font-bold text-zinc-100 mb-2">Academic Excellence</h4>
+              <p className="text-emerald-500 font-mono text-2xl font-black mb-4">9.62 CGPA</p>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Graduated with distinction, securing the <span className="text-zinc-100 font-medium">top-rank</span> in the department at Mumbai University. Recognized for consistent technical proficiency and academic leadership.
+              </p>
+              
+              <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
+                <Award size={160} />
+              </div>
+            </motion.div>
+
+            {/* Certifications */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="group p-8 bg-zinc-900/20 border border-zinc-800 rounded-2xl hover:border-emerald-500/30 transition-all relative overflow-hidden"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-500">
+                  <CheckCircle2 size={24} />
+                </div>
+                <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-[0.2em]">Validation_02</span>
+              </div>
+              
+              <h4 className="text-lg font-bold text-zinc-100 mb-4">Professional Certifications</h4>
+              <div className="space-y-4">
+                {[
+                  { name: 'React.js', provider: 'Scalar' },
+                  { name: 'Advanced Python', provider: 'TuteDude' },
+                  { name: 'Core Python', provider: 'GeeksforGeeks' }
+                ].map((cert, i) => (
+                  <div key={i} className="flex items-center justify-between border-b border-zinc-800/50 pb-2">
+                    <span className="text-zinc-300 text-sm font-medium">{cert.name}</span>
+                    <span className="text-zinc-500 font-mono text-[10px] uppercase">{cert.provider}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
+                <Shield size={160} />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
