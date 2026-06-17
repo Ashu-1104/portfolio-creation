@@ -1,25 +1,23 @@
 'use client';
 
-import { ProHeader } from '@/components/pro-header';
-import { ProHero } from '@/components/pro-hero';
-import { ProAbout } from '@/components/pro-about';
-import { ProExperience } from '@/components/pro-experience';
-import { ProProjects } from '@/components/pro-projects';
-import { ProSkills } from '@/components/pro-skills';
-import { ProContact } from '@/components/pro-contact';
-import { ProFooter } from '@/components/pro-footer';
+import { CreativeHeader } from '@/components/creative-header';
+import { CreativeHero } from '@/components/creative-hero';
+import { CreativeExperience } from '@/components/creative-experience';
+import { CreativeProjects } from '@/components/creative-projects';
+import { CreativeSkills } from '@/components/creative-skills';
+import { CreativeContact } from '@/components/creative-contact';
+import { CreativeFooter } from '@/components/creative-footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <ProHeader />
-      <ProHero />
-      <ProAbout />
-      <ProExperience />
-      <ProProjects />
-      <ProSkills />
-      <ProContact />
-      <ProFooter />
+    <main className="bg-background">
+      <CreativeHeader />
+      <CreativeHero />
+      <CreativeExperience />
+      <CreativeProjects />
+      <CreativeSkills />
+      <CreativeContact />
+      <CreativeFooter />
     </main>
   );
 }
