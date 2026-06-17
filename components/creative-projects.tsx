@@ -1,102 +1,143 @@
 'use client';
 
-import { Code2, ExternalLink } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function CreativeProjects() {
   const projects = [
     {
       title: 'Nexus Bank',
-      description: 'Secure full-stack banking portal with encrypted sessions and real-time ledger tracking',
+      description: 'A robust banking portal with military-grade encryption and real-time ledger tracking.',
       features: [
-        'Encrypted sessions & security',
-        'RESTful API in PHP',
-        'ACID-compliant transactions',
-        'Responsive dashboard',
+        'Secure Session Management',
+        'RESTful Architecture',
+        'ACID-compliant DB',
+        'Responsive UI/UX',
       ],
-      tech: ['React.js', 'PHP', 'Bootstrap', 'MySQL'],
-      color: 'from-primary to-secondary',
+      tech: ['Next.js', 'PostgreSQL', 'Tailwind', 'PHP'],
+      color: 'from-primary/20 to-secondary/20',
     },
     {
-      title: 'TikTok Clone',
-      description: 'Responsive streaming feed with lazy-loading and infinite scroll for mobile-first experience',
+      title: 'Streamify Clone',
+      description: 'High-performance video streaming platform with infinite scroll and dynamic content delivery.',
       features: [
-        'Lazy-loading & infinite scroll',
-        'Video processing backend',
-        'User authentication',
-        'Follower-feeds system',
+        'Lazy-loading engine',
+        'Optimized Video Pipeline',
+        'Auth & Social Integration',
+        'Mobile-First Design',
       ],
-      tech: ['Django', 'Python', 'Tailwind CSS', 'Alpine.js'],
-      color: 'from-secondary to-accent',
+      tech: ['React.js', 'Django', 'Redis', 'AWS'],
+      color: 'from-secondary/20 to-accent/20',
     },
     {
-      title: 'Railway Ticket Reservation',
-      description: 'Intelligent reservation engine with automated coach allocation and dynamic UI updates',
+      title: 'Smart Rail Engine',
+      description: 'Intelligent reservation system with automated allocation and real-time seat tracking.',
       features: [
-        'Automated coach allocation',
-        'AJAX-based real-time updates',
-        'Data sanitization & security',
-        'Prepared statements',
+        'Auto-Allocation Logic',
+        'Live AJAX Updates',
+        'Sanitized Data Layer',
+        'High Concurrency Ready',
       ],
-      tech: ['PHP', 'MySQL', 'JavaScript'],
-      color: 'from-accent to-primary',
+      tech: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
+      color: 'from-accent/20 to-primary/20',
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
   return (
-    <section id="projects" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16">
-          <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Featured Projects
-          </span>
-        </h2>
+    <section id="projects" className="py-32 px-6 bg-background relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-20"
+        >
+          <h2 className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4">Portfolio</h2>
+          <h3 className="text-4xl md:text-6xl font-black tracking-tight">
+            Featured <span className="text-muted-foreground">Projects</span>
+          </h3>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative h-full bg-gradient-to-br from-card to-card/50 border border-border rounded-xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20"
+              variants={cardVariants}
+              whileHover={{ y: -10 }}
+              className="group relative flex flex-col h-full bg-card/40 backdrop-blur-md border border-border/50 rounded-3xl overflow-hidden hover:border-primary/50 transition-colors duration-500"
             >
-              {/* Gradient accent on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 -z-10`}></div>
+              {/* Background Glow */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}></div>
 
-              <div className="p-6 space-y-4 h-full flex flex-col">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-primary group-hover:text-secondary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-foreground/70">{project.description}</p>
-                </div>
-
-                <div className="space-y-3 flex-grow">
-                  <div>
-                    <p className="text-sm font-semibold text-foreground/60 mb-2">Key Features</p>
-                    <ul className="space-y-1">
-                      {project.features.map((feature, i) => (
-                        <li key={i} className="text-sm text-foreground/70 flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+              <div className="p-8 space-y-6 flex flex-col flex-grow">
+                <div className="flex justify-between items-start">
+                  <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                    <Github size={24} />
                   </div>
+                  <motion.a 
+                    whileHover={{ scale: 1.1, rotate: 45 }}
+                    href="#" 
+                    className="p-3 rounded-full bg-border/50 text-foreground/70 hover:text-primary transition-colors"
+                  >
+                    <ArrowUpRight size={20} />
+                  </motion.a>
                 </div>
 
-                <div className="pt-4 border-t border-border space-y-4">
-                  <div className="flex flex-wrap gap-2">
+                <div className="space-y-3">
+                  <h4 className="text-2xl font-bold tracking-tight">{project.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                </div>
+
+                <div className="flex-grow">
+                  <div className="flex flex-wrap gap-2 pt-2">
                     {project.tech.map((t) => (
-                      <span key={t} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
+                      <span key={t} className="text-[10px] uppercase tracking-widest px-3 py-1 bg-border/40 text-foreground/60 rounded-full font-bold">
                         {t}
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  
+                <div className="pt-6 border-t border-border/30">
+                  <ul className="space-y-2">
+                    {project.features.map((feature, i) => (
+                      <li key={i} className="text-sm text-foreground/70 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-primary/60 rounded-full"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
