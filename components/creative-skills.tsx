@@ -10,17 +10,17 @@ export function CreativeSkills() {
     {
       title: 'Backend',
       color: 'bg-secondary/10 text-secondary border-secondary/30',
-      skills: ['PHP', 'Python (Django)', 'Node.js', 'C++', 'REST APIs', 'Shell Scripting (Bash)'],
+      skills: ['PHP', 'Python', 'Node.js', 'C++', 'REST APIs', 'Shell Scripting (Bash)'],
     },
     {
       title: 'Database & Infrastructure',
       color: 'bg-accent/10 text-accent border-accent/30',
-      skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Git', 'Linux (SysAdmin)', 'Docker'],
+      skills: ['MySQL', 'PostgreSQL', 'MongoDB'],
     },
     {
       title: 'Expertise',
       color: 'bg-green-500/10 text-green-400 border-green-500/30',
-      skills: ['Web Security', 'Query Optimization', 'API Development', 'CTF Challenges', 'Cloud Hosting'],
+      skills: ['Linux', 'Web Security', 'Git', 'Query Optimization', 'API Development'],
     },
   ];
 

@@ -91,16 +91,7 @@ export function CreativeProjects() {
                     ))}
                   </div>
 
-                  <div className="flex gap-3">
-                    <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-colors text-sm font-medium">
-                      <Code2 size={16} />
-                      Code
-                    </button>
-                    <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-secondary/20 text-secondary rounded-lg hover:bg-secondary/30 transition-colors text-sm font-medium">
-                      <ExternalLink size={16} />
-                      Demo
-                    </button>
-                  </div>
+                  
                 </div>
               </div>
             </div>
