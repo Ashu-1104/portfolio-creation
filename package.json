@@ -37,18 +37,7 @@
     }
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ashu-1104/portfolio-creation.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Ashu-1104/portfolio-creation/issues"
   },
