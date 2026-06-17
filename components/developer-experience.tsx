@@ -17,8 +17,8 @@ const experiences = [
     position: 'Frontend Developer (Intern)',
     location: 'Remote/Mumbai',
     period: 'Jan 2026 – Jun 2026',
-    description: 'Architected SEO-optimized structures using Next.js 15, leveraging SSR/ISR to improve speed by 35%. Developed modular UI library with Tailwind CSS and TypeScript, increasing dev velocity by 30%. Integrated real-time AI-driven interfaces.',
-    tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'AI Integration'],
+    description: 'Collaborated on architecting secure, responsive interfaces using Next.js 15 and Tailwind CSS. Developed modular UI libraries and integrated real-time data features while maintaining high code quality and type safety.',
+    tech: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'Git'],
   },
   {
     company: 'Talakunchi Network Pvt. Ltd.',

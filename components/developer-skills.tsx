@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Cpu, Globe, Database, Terminal, Shield, Zap } from 'lucide-react';
+import { Cpu, Globe, Database, Terminal, Shield, Box } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -17,12 +17,12 @@ const skillCategories = [
   {
     title: 'Data & Infrastructure',
     icon: <Database size={20} className="text-emerald-500" />,
-    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Linux (Debian/RHEL)', 'Docker'],
+    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Linux (Debian/RHEL)', 'Git'],
   },
   {
-    title: 'Modern Architecture',
-    icon: <Zap size={20} className="text-emerald-500" />,
-    skills: ['AI Integration', 'LLM Streaming', 'SSR/ISR', 'Perf Optimization'],
+    title: 'Specialized Expertise',
+    icon: <Box size={20} className="text-emerald-500" />,
+    skills: ['System Hardening', 'API Architecture', 'Network Security', 'CTF Design'],
   },
 ];
 
