@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X, Terminal } from 'lucide-react';
 
 export function DeveloperHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 24, mass: 0.3 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +28,17 @@ export function DeveloperHeader() {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 py-3' : 'bg-transparent py-5'
       }`}
     >
+      {/* reading-progress line: doubles as the "how far down the page" indicator */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-[2px] bg-emerald-500 origin-left"
+        style={{ scaleX: progress }}
+      />
+
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 bg-emerald-500 flex items-center justify-center rounded-md group-hover:rotate-6 transition-transform">
@@ -43,8 +52,8 @@ export function DeveloperHeader() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link 
-              key={item.label} 
+            <Link
+              key={item.label}
               href={item.href}
               className="text-sm font-medium text-zinc-400 hover:text-emerald-500 transition-colors font-mono"
             >
@@ -52,8 +61,8 @@ export function DeveloperHeader() {
               {item.label}
             </Link>
           ))}
-          <Link 
-            href="#contact" 
+          <Link
+            href="#contact"
             className="px-5 py-2 bg-zinc-100 text-zinc-950 rounded-md text-sm font-bold hover:bg-emerald-500 transition-colors"
           >
             Connect
@@ -61,7 +70,7 @@ export function DeveloperHeader() {
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-zinc-100"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -73,8 +82,8 @@ export function DeveloperHeader() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-900 border-b border-zinc-800 p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
           {navItems.map((item) => (
-            <Link 
-              key={item.label} 
+            <Link
+              key={item.label}
               href={item.href}
               className="text-lg font-mono text-zinc-300"
               onClick={() => setIsOpen(false)}

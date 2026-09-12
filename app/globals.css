@@ -106,3 +106,31 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-zinc-800 rounded-full border-2 border-zinc-950 hover:bg-zinc-700 transition-colors;
 }
+
+/* Signature motion primitives used by the hero portrait + scroll cue.
+   Kept to a small, named set so motion stays intentional, not scattered. */
+@keyframes scan {
+  0%, 100% { transform: translateY(-140%); opacity: 0; }
+  15% { opacity: 1; }
+  50% { transform: translateY(220%); opacity: 1; }
+  85% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes scroll-cue {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
