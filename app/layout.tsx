@@ -4,29 +4,18 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ashutosh Tiwari | Full-Stack Developer',
-  description: 'Full-Stack Developer specializing in Next.js, React, and modern web technologies. Building scalable applications with expertise in frontend and backend development.',
-  generator: 'v0.app',
+  title: 'Ashutosh Tiwari — Software Engineer | Full-Stack · Systems · Security',
+  description: 'Portfolio of Ashutosh Tiwari, a full-stack software engineer working across Next.js, React, PHP, Python, Linux systems, APIs, databases, infrastructure, and security.',
+  keywords: ['Ashutosh Tiwari', 'Software Engineer', 'Full-Stack Developer', 'Next.js', 'React', 'Linux', 'Security', 'PHP', 'Python'],
+  authors: [{ name: 'Ashutosh Tiwari' }],
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
+      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: '/apple-icon.png',
   },
@@ -35,19 +24,15 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: 'light dark',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+    { media: '(prefers-color-scheme: light)', color: '#f5f7f4' },
+    { media: '(prefers-color-scheme: dark)', color: '#070809' },
   ],
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`bg-background ${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
