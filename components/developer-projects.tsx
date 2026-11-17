@@ -9,6 +9,13 @@ const GithubIcon = ({ size = 20 }: { size?: number }) => (
 
 const projects = [
   {
+    title: 'FocusHub',
+    description: 'Full-stack productivity workspace: tasks with a drag-and-drop calendar, recurring tasks and reminders, real-time sync across devices (Server-Sent Events), and analytics with charts and insights. Deployed on Vercel.',
+    tech: ['React', 'Redux Toolkit', 'Node.js', 'Express', 'MongoDB', 'Recharts', 'Vercel'],
+    link: 'https://focushub-tawny.vercel.app',
+    github: 'https://github.com/Ashu-1104/focushub',
+  },
+  {
     title: 'CheckMate Arena',
     description: 'Real-time multiplayer chess with server-synced clocks, Elo ratings and a leaderboard, resign/draw flows and a Stockfish AI opponent running in a Web Worker. Extended from open-source chessu.',
     tech: ['Next.js', 'TypeScript', 'Node.js', 'Socket.IO', 'PostgreSQL'],
