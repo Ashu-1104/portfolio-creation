@@ -17,9 +17,9 @@ const projects = [
   },
   {
     title: 'CheckMate Arena',
-    description: 'Real-time multiplayer chess with server-synced clocks, Elo ratings and a leaderboard, resign/draw flows and a Stockfish AI opponent running in a Web Worker. Extended from open-source chessu.',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'Socket.IO', 'PostgreSQL'],
-    link: '',
+    description: 'Real-time multiplayer chess with server-synced clocks, Elo ratings and a leaderboard, resign/draw flows and a Stockfish AI opponent running in a Web Worker. Real-time play over Server-Sent Events on Vercel. Extended from open-source chessu.',
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Server-Sent Events', 'Vercel'],
+    link: 'https://checkmate-arena-bay.vercel.app',
     github: 'https://github.com/Ashu-1104/checkmate-arena',
   },
   {

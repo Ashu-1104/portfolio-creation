@@ -89,7 +89,7 @@ Current professional work includes development and management of server-side fun
 Full-stack productivity workspace built with React, Redux Toolkit, Node.js, Express, and MongoDB: drag-and-drop task calendar, recurring tasks and reminders, real-time sync over Server-Sent Events, and productivity analytics. Extended from the open-source NexusDesk project. [Live demo](https://focushub-tawny.vercel.app) · [GitHub](https://github.com/Ashu-1104/focushub)
 
 ### CheckMate Arena
-Real-time multiplayer chess built with Next.js, TypeScript, Node.js, Socket.IO, and PostgreSQL, featuring server-synced clocks, Elo ratings, and a Stockfish AI opponent. Extended from the open-source chessu project. [GitHub](https://github.com/Ashu-1104/checkmate-arena)
+Real-time multiplayer chess built with Next.js, TypeScript, Node.js, Server-Sent Events, and PostgreSQL, deployed on Vercel, featuring server-synced clocks, Elo ratings, and a Stockfish AI opponent. Extended from the open-source chessu project. [Live demo](https://checkmate-arena-bay.vercel.app) · [GitHub](https://github.com/Ashu-1104/checkmate-arena)
 
 ### Railway Ticket Reservation
 A railway reservation application built with PHP, MySQL, and JavaScript.
