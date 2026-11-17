@@ -9,25 +9,18 @@ const GithubIcon = ({ size = 20 }: { size?: number }) => (
 
 const projects = [
   {
-    title: 'Nexus Bank',
-    description: 'A secure full-stack banking portal with encrypted sessions and real-time ledger tracking. Features ACID-compliant transactions and a responsive dashboard.',
-    tech: ['Next.js', 'PHP', 'PostgreSQL', 'REST API'],
-    link: '#',
-    github: 'https://github.com/Ashu-1104',
-  },
-  {
-    title: 'TikTok Clone',
-    description: 'Built a responsive streaming feed with lazy-loading and infinite scroll. Implemented video processing and follower-feeds using Django ORM.',
-    tech: ['Django', 'Python', 'Tailwind CSS', 'PostgreSQL'],
-    link: '#',
-    github: 'https://github.com/Ashu-1104',
+    title: 'CheckMate Arena',
+    description: 'Real-time multiplayer chess with server-synced clocks, Elo ratings and a leaderboard, resign/draw flows and a Stockfish AI opponent running in a Web Worker. Extended from open-source chessu.',
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'Socket.IO', 'PostgreSQL'],
+    link: '',
+    github: 'https://github.com/Ashu-1104/checkmate-arena',
   },
   {
     title: 'Railway Ticket Reservation',
     description: 'Comprehensive reservation engine with automated coach allocation and dynamic AJAX UI. Focused on security with sanitized data layers.',
     tech: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-    link: '#',
-    github: 'https://github.com/Ashu-1104',
+    link: '',
+    github: 'https://github.com/Ashu-1104/Railway-ticket-reservation',
   },
 ];
 
@@ -62,9 +55,11 @@ export function DeveloperProjects() {
                   <a href={project.github} target="_blank" className="hover:text-emerald-500 transition-colors">
                     <GithubIcon size={20} />
                   </a>
-                  <a href={project.link} target="_blank" className="hover:text-emerald-500 transition-colors">
-                    <ExternalLink size={20} />
-                  </a>
+                  {project.link && (
+                    <a href={project.link} target="_blank" className="hover:text-emerald-500 transition-colors">
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
                 </div>
               </div>
 

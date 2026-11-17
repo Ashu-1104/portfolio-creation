@@ -85,11 +85,8 @@ Current professional work includes development and management of server-side fun
 
 ## 🚀 Projects
 
-### Nexus Bank
-A banking application built with React.js, PHP, Bootstrap, and MySQL.
-
-### TikTok Clone
-A social-video application developed with Django, Python, Tailwind CSS, and Alpine.js.
+### CheckMate Arena
+Real-time multiplayer chess built with Next.js, TypeScript, Node.js, Socket.IO, and PostgreSQL, featuring server-synced clocks, Elo ratings, and a Stockfish AI opponent. Extended from the open-source chessu project. [GitHub](https://github.com/Ashu-1104/checkmate-arena)
 
 ### Railway Ticket Reservation
 A railway reservation application built with PHP, MySQL, and JavaScript.
