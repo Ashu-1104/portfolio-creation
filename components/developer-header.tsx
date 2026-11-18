@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Menu, X, Terminal } from 'lucide-react';
+import { IdCard, Menu, Search, X } from 'lucide-react';
+import { ThemeToggle } from './theme-toggle';
+import { Magnetic } from './interactions';
+import { SoundToggle } from './sound-effects';
+import { openPalette } from './command-palette';
+import { openBusinessCard } from './business-card';
 
 export function DeveloperHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +25,7 @@ export function DeveloperHeader() {
   }, []);
 
   const navItems = [
-    { label: 'About', href: '#about' },
+    { label: 'About', href: '#about-me' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#skills' },
@@ -41,16 +46,17 @@ export function DeveloperHeader() {
 
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-emerald-500 flex items-center justify-center rounded-md group-hover:rotate-6 transition-transform">
-            <Terminal size={18} className="text-zinc-950" />
-          </div>
+          {/* AT badge logo (same as the tab icon), spins once on hover */}
+          <span className="w-9 h-9 rounded-full bg-zinc-950 border-2 border-emerald-500 flex items-center justify-center font-black text-sm tracking-tighter group-hover:[transform:rotateY(360deg)] transition-transform duration-700">
+            <span className="text-zinc-100">A</span><span className="text-emerald-500">T</span>
+          </span>
           <span className="font-mono font-bold text-xl tracking-tight text-zinc-100">
             ashu<span className="text-emerald-500">.</span>dev
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -61,26 +67,46 @@ export function DeveloperHeader() {
               {item.label}
             </Link>
           ))}
+          <button
+            type="button"
+            onClick={openPalette}
+            className="flex items-center gap-2 h-9 px-3 rounded-md border border-zinc-800 text-zinc-500 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors text-xs"
+            aria-label="Open command palette"
+          >
+            <Search size={14} /> <kbd className="font-mono">Ctrl K</kbd>
+          </button>
+          <button type="button" onClick={openBusinessCard} aria-label="Share my business card" title="My business card" className="w-9 h-9 flex items-center justify-center rounded-md border border-zinc-800 text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors"><IdCard size={16} /></button>
+          <SoundToggle />
+          <ThemeToggle />
+<Magnetic>
           <Link
             href="#contact"
             className="px-5 py-2 bg-zinc-100 text-zinc-950 rounded-md text-sm font-bold hover:bg-emerald-500 transition-colors"
           >
             Connect
           </Link>
+          </Magnetic>
         </nav>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden text-zinc-100"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3">
+          <button type="button" onClick={openPalette} aria-label="Open command palette" className="w-9 h-9 flex items-center justify-center rounded-md border border-zinc-800 text-zinc-400"><Search size={16} /></button>
+          <button type="button" onClick={openBusinessCard} aria-label="Share my business card" title="My business card" className="w-9 h-9 flex items-center justify-center rounded-md border border-zinc-800 text-zinc-400 hover:text-emerald-500 hover:border-emerald-500/40 transition-colors"><IdCard size={16} /></button>
+          <SoundToggle />
+          <ThemeToggle />
+          <button
+            className="text-zinc-100"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menu"
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-900 border-b border-zinc-800 p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-zinc-900 border-b border-zinc-800 p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4">
           {navItems.map((item) => (
             <Link
               key={item.label}
