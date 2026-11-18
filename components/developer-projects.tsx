@@ -9,6 +9,13 @@ const GithubIcon = ({ size = 20 }: { size?: number }) => (
 
 const projects = [
   {
+    title: 'CareerPilot',
+    description: 'Full-stack job portal for India: live jobs from company career pages, a resume match score on every job, AI cover letters, an application tracker, employer chat, interview scheduling and live notifications. Deployed on Vercel.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Server-Sent Events', 'Vercel'],
+    link: 'https://careerpilot-blush-eight.vercel.app',
+    github: 'https://github.com/Ashu-1104/CareerPilot',
+  },
+  {
     title: 'FocusHub',
     description: 'Full-stack productivity workspace: tasks with a drag-and-drop calendar, recurring tasks and reminders, real-time sync across devices (Server-Sent Events), and analytics with charts and insights. Deployed on Vercel.',
     tech: ['React', 'Redux Toolkit', 'Node.js', 'Express', 'MongoDB', 'Recharts', 'Vercel'],

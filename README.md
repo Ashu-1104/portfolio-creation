@@ -85,6 +85,9 @@ Current professional work includes development and management of server-side fun
 
 ## 🚀 Projects
 
+### CareerPilot
+Full-stack job portal built with React, Node.js, Express, and MongoDB: live jobs from Indian company career pages, a resume match score on every job, AI cover letters, an application tracker, employer–candidate chat, interview scheduling, and live notifications over Server-Sent Events. Extended from the open-source Job Portal project. [Live demo](https://careerpilot-blush-eight.vercel.app) · [GitHub](https://github.com/Ashu-1104/CareerPilot)
+
 ### FocusHub
 Full-stack productivity workspace built with React, Redux Toolkit, Node.js, Express, and MongoDB: drag-and-drop task calendar, recurring tasks and reminders, real-time sync over Server-Sent Events, and productivity analytics. Extended from the open-source NexusDesk project. [Live demo](https://focushub-tawny.vercel.app) · [GitHub](https://github.com/Ashu-1104/focushub)
 
